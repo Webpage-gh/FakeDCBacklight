@@ -61,11 +61,13 @@ class Hook : IXposedHookLoadPackage {
                             "pref_max_dim_strength",
                             90
                         )
-                        Settings.Secure.putInt(
-                            ctx.contentResolver,
-                            "reduce_bright_colors_level",
-                            dim.toInt()
-                        )
+                        if (checkWriteSettingsPermission(ctx)) {
+                            Settings.Secure.putInt(
+                                ctx.contentResolver,
+                                "reduce_bright_colors_level",
+                                dim.toInt()
+                            )
+                        }
                         Settings.Secure.putInt(
                             ctx.contentResolver,
                             "reduce_bright_colors_activated",
@@ -144,5 +146,9 @@ class Hook : IXposedHookLoadPackage {
             prefs.reload()
         }
         return prefs.getInt(key, defValue)
+    }
+
+    private fun checkWriteSettingsPermission(context: Context): Boolean {
+        return Settings.System.canWrite(context)
     }
 }

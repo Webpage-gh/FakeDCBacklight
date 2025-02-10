@@ -15,11 +15,13 @@ import android.preference.SwitchPreference
 import android.provider.Settings
 import kotlin.system.exitProcess
 
-class SettingsActivity : Activity() {
+public class SettingsActivity extends AppCompatActivity {
+    private lateinit var binding: ActivitySettingsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_settings)
+        binding = ActivitySettingsBinding.inflate(layoutInflater)
+        setContentView(binding.root)
     }
 
     class SettingsFragment : PreferenceFragment() {
@@ -49,7 +51,7 @@ class SettingsActivity : Activity() {
             try {
                 sp = activity.getSharedPreferences(
                     "config",
-                    MODE_WORLD_READABLE
+                    Context.MODE_PRIVATE
                 )
             } catch (exception: SecurityException) {
                 AlertDialog.Builder(activity).apply {
