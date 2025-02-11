@@ -1,5 +1,4 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ztc1997.fakedcbacklight">
 
     <application
         android:allowBackup="true"
