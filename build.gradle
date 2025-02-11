@@ -28,9 +28,3 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
-
-android {
-    defaultConfig {
-        applicationId "com.ztc1997.fakedcbacklight"
-    }
-}
