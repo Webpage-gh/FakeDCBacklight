@@ -13,6 +13,11 @@ import android.preference.Preference
 import android.preference.PreferenceFragment
 import android.preference.SwitchPreference
 import android.provider.Settings
+import androidx.appcompat.app.AppCompatActivity
+import androidx.preference.PreferenceFragmentCompat
+import androidx.preference.SwitchPreference
+import androidx.preference.EditTextPreference
+import androidx.preference.Preference
 import kotlin.system.exitProcess
 
 public class SettingsActivity extends AppCompatActivity {
