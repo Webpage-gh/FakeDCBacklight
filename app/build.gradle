@@ -37,6 +37,7 @@ android {
     }
 
     compileOptions {
+        kotlinCompilerExtensionVersion = "1.5.15"  // 匹配Kotlin 1.9.0
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
     }
