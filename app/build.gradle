@@ -29,7 +29,7 @@ android {
     buildFeatures {
         buildConfig true
         viewBinding true
-        compose true  // 如果使用Compose
+        compose false  // 如果使用Compose
     }
 
     dataBinding {
