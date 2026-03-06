@@ -29,7 +29,11 @@ android {
     buildFeatures {
         buildConfig true
         viewBinding true
-        compose false  // 如果使用Compose
+        compose true  // 如果使用Compose
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.4.0"  // 适配 Kotlin 1.8.0
     }
 
     dataBinding {
